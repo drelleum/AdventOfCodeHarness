@@ -1,0 +1,17 @@
+using AdventOfCode.Utils;
+using System;
+using System.Collections.Generic;
+
+namespace AdventOfCode.Solutions
+{
+    public class Solution_2021_04 : CSharpSolution
+    {
+        public override void Solve(PuzzleInput input)
+        {
+            // Write your puzzle solution here!
+
+            SubmitPartOne(string.Empty);
+            SubmitPartTwo(string.Empty);
+        }
+    }
+}

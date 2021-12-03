@@ -57,7 +57,12 @@ namespace AdventOfCode.Utils
       List<int> ints = new List<int>();
       foreach (string s in rawInput.Split(separator))
       {
-        ints.Add(int.Parse(s));
+        try{
+          ints.Add(int.Parse(s));
+        }
+        catch (FormatException e){
+          // Discard this because I'm lazu
+        }
       }
 
       return ints;
