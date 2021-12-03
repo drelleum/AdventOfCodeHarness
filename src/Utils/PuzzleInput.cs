@@ -55,14 +55,9 @@ namespace AdventOfCode.Utils
     public List<int> GetInts(string separator)
     {
       List<int> ints = new List<int>();
-      foreach (string s in rawInput.Split(separator))
+      foreach (string s in GetLines())
       {
-        try{
-          ints.Add(int.Parse(s));
-        }
-        catch (FormatException e){
-          // Discard this because I'm lazu
-        }
+        ints.Add(int.Parse(s));
       }
 
       return ints;
@@ -70,7 +65,10 @@ namespace AdventOfCode.Utils
 
     public List<string> GetLines()
     {
-      return new List<string>(rawInput.Split("\n"));
+      List<string> lines = new List<string>(rawInput.Split("\n"));
+      // Ditch the empty line at the end
+      lines.RemoveAt(lines.Count-1);
+      return lines;
     }
 
     public List<List<string>> GetChunks()
