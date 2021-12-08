@@ -55,7 +55,7 @@ namespace AdventOfCode.Utils
     public List<int> GetInts(string separator)
     {
       List<int> ints = new List<int>();
-      foreach (string s in GetLines())
+      foreach (string s in rawInput.Split(separator, StringSplitOptions.RemoveEmptyEntries))
       {
         ints.Add(int.Parse(s));
       }
